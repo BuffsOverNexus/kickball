@@ -1,1 +1,11 @@
-<a href="/">Home</a> | <a href="account">Account</a> | <a href="teams">Teams</a> | <a href="players">Players</a> | <a href="rosters">Rosters</a> <span *ngIf="isLoggedIn"> | <a href="logout">Logout</a></span>
+<div class="bg-gray-800 text-white p-4">
+    <a href="/" class="hover:text-gray-300 mr-4">Home</a>
+    <a href="account" class="hover:text-gray-300 mr-4">Account</a>
+    <a href="teams" class="hover:text-gray-300 mr-4">Teams</a>
+    <a href="players" class="hover:text-gray-300 mr-4">Players</a>
+    <a href="rosters" class="hover:text-gray-300 mr-4">Rosters</a>
+    <span *ngIf="isLoggedIn">
+        <span class="text-gray-300">|</span>
+        <a href="logout" class="hover:text-gray-300 ml-4">Logout</a>
+    </span>
+</div>

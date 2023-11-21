@@ -7,6 +7,7 @@ import { Player } from '../player';
 import { Gender } from '../gender';
 import { TeamService } from '../team.service';
 import { Roster } from '../roster';
+import { Position } from '../position';
 
 @Component({
   selector: 'app-player',
@@ -37,6 +38,7 @@ export class PlayerComponent implements OnInit {
   errors: string[] = [];
 
   genders: string[] = Object.keys(Gender).filter(key => !isNaN(Number(key))).map(key => (Gender as any)[key]);
+  preferences: string[] = Object.keys(Position).filter(key => !isNaN(Number(key))).map(key => (Position as any)[key]);
 
   ngOnInit(): void {
     // Determine if the person is logged in.
@@ -93,7 +95,11 @@ export class PlayerComponent implements OnInit {
             error: () => {},
           });
         }
-      })
+      });
+  }
+
+  delete(id: number) {
+    console.log(id);
   }
 
 }

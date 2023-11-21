@@ -1,6 +1,22 @@
+<div class="w-full max-w-xs mx-auto mt-8">
+    <h1 class="text-3xl font-bold mb-4 text-center">Login</h1>
 
-<h1>Login</h1>
-<div *ngIf="errors.length > 0" class="text-red-500"><p *ngFor="let error of errors"><strong>Error:</strong> {{ error }}</p></div>
-<div>Username: <input type="text" [(ngModel)]="form.username" /></div>
-<div>Password: <input type="password" [(ngModel)]="form.password" /></div>
-<button type="button" (click)="login()">Login</button>
+    <div *ngIf="errors.length > 0" class="bg-red-100 border border-red-500 text-red-700 p-4 rounded-md mb-4">
+        <p *ngFor="let error of errors" class="mb-2"><strong>Error:</strong> {{ error }}</p>
+    </div>
+
+    <div class="mb-4">
+        <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+        <input id="username" type="text" [(ngModel)]="form.username"
+            class="w-full border border-gray-300 p-2 rounded-md focus:outline-none" />
+    </div>
+
+    <div class="mb-4">
+        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+        <input id="password" type="password" [(ngModel)]="form.password"
+            class="w-full border border-gray-300 p-2 rounded-md focus:outline-none" />
+    </div>
+
+    <button type="button" (click)="login()"
+        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-opacity duration-300 focus:outline-none">Login</button>
+</div>

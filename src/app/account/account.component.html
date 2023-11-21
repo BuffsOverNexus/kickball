@@ -1,6 +1,27 @@
-<p>account works!</p>
+<!-- Assuming the Account interface is imported -->
+
 <app-login *ngIf="!isLoggedIn"></app-login>
 <app-register *ngIf="!isLoggedIn && register"></app-register>
+
 <div *ngIf="isLoggedIn">
-    You're logged in!!
+    <h1 class="text-3xl font-bold mb-4">You're logged in!!</h1>
+
+    <!-- Displaying player's data using disabled inputs -->
+    <div class="mb-4">
+        <label for="accountId" class="block text-gray-700 text-sm font-bold mb-2">Account ID:</label>
+        <input id="accountId" type="text" [(ngModel)]="account!.id" class="w-full bg-white rounded-md p-2 text-black"
+            disabled />
+    </div>
+
+    <div class="mb-4">
+        <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+        <input id="username" type="text" [(ngModel)]="account!.username"
+            class="w-full bg-white rounded-md p-2 text-black" disabled />
+    </div>
+
+    <!-- Red "logout" button formatted similar to other buttons -->
+    <button type="button" (click)="logout()"
+        class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md transition-opacity duration-300 focus:outline-none">
+        Logout
+    </button>
 </div>
