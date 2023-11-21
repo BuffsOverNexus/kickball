@@ -1,0 +1,16 @@
+<p>roster works!</p>
+<button type="button" (click)="generate()">Generate Order</button>
+<table *ngIf="battingOrder.length > 0 ">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let batter of battingOrder; let battingNumber = index;">
+            <td>{{ battingNumber + 1 }}</td>
+            <td>{{ batter.firstName }} {{ batter.lastName }}</td>
+        </tr>
+    </tbody>
+</table>

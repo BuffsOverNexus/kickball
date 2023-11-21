@@ -1,0 +1,15 @@
+<div *ngIf="errors.length > 0" class="text-red-500">
+    <p *ngFor="let error of errors"><strong>Error:</strong> {{ error }}</p>
+</div>
+<div *ngIf="teams.length > 0">
+    <h1>Select Team</h1>
+    <select [(ngModel)]="selectedTeamId" class="text-black">
+        <option [ngValue]="team.id" *ngFor="let team of teams">{{ team.name }}</option>
+    </select>
+    <button type="button" (click)="select()">Select</button>
+</div>
+<div>
+    <h1>Create Team</h1>
+    Team Name: <input type="text" [(ngModel)]="team.name" placeholder="Team Name"/>
+    <button type="button" (click)="create()">Create</button>
+</div>

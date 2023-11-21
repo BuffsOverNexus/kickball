@@ -1,0 +1,29 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Preferences</th>
+                <th>Gender</th>
+                <th>Options...</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let player of players">
+                <td>{{ player.firstName }}</td>
+                <td>{{ player.lastName }}</td>
+                <td><span *ngFor="let preference of player.preferences">{{ preference }}</span></td>
+                <td>{{ player.gender }} </td>
+                <td>TBD</td>
+            </tr>
+            <tr *ngIf="players.length == 0"><td colspan="5" class="font-bold text-center text-red-500">No Players</td></tr>
+            <tr class="text-black">
+                <td><input type="text" [(ngModel)]="createdPlayer.firstName" /></td>
+                <td><input type="text" [(ngModel)]="createdPlayer.lastName" /></td>
+                <td><select [(ngModel)]="createdPlayer.gender"><option [ngValue]="gender" *ngFor="let gender of genders">{{ gender }}</option></select></td>
+                <td><button type="button" (click)="create()" class="text-white">Create</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

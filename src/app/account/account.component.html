@@ -1,0 +1,6 @@
+<p>account works!</p>
+<app-login *ngIf="!isLoggedIn"></app-login>
+<app-register *ngIf="!isLoggedIn && register"></app-register>
+<div *ngIf="isLoggedIn">
+    You're logged in!!
+</div>

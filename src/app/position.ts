@@ -1,0 +1,12 @@
+export enum Position {
+    LEFT_FIELD,
+    RIGHT_FIELD,
+    LEFT_CENTER_FIELD,
+    RIGHT_CENTER_FIELD,
+    FIRST_BASE,
+    SECOND_BASE,
+    SHORT_STOP,
+    THIRD_BASE,
+    PITCHER,
+    CATCHER
+}

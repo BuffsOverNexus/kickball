@@ -1,0 +1,6 @@
+
+<h1>Login</h1>
+<div *ngIf="errors.length > 0" class="text-red-500"><p *ngFor="let error of errors"><strong>Error:</strong> {{ error }}</p></div>
+<div>Username: <input type="text" [(ngModel)]="form.username" /></div>
+<div>Password: <input type="password" [(ngModel)]="form.password" /></div>
+<button type="button" (click)="login()">Login</button>
