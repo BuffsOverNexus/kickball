@@ -1,16 +1,23 @@
-<p>roster works!</p>
-<button type="button" (click)="generate()">Generate Order</button>
-<table *ngIf="battingOrder.length > 0 ">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let batter of battingOrder; let battingNumber = index;">
-            <td>{{ battingNumber + 1 }}</td>
-            <td>{{ batter.firstName }} {{ batter.lastName }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="p-4 bg-gray-900 text-white">
+    <div *ngIf="players.length > 0" class="mb-4">
+        <h1 class="text-2xl font-bold mb-2">Player List</h1>
+        <div *ngFor="let player of players"
+            class="flex items-center justify-between bg-gray-800 text-white rounded-md p-2 mb-2">
+            <label [for]="player.id" class="text-white">{{ player.firstName }} {{ player.lastName }}</label>
+            <input type="checkbox" [(ngModel)]="player.ineligible" class="ml-2" />
+        </div>
+    </div>
+
+    <div class="flex-col" *ngIf="battingOrder.length > 0">
+        <h1 class="text-2xl font-bold mb-2">Batting Order</h1>
+        <div *ngFor="let batter of battingOrder; let battingNumber = index"
+            class="flex items-center justify-between bg-gray-800 text-white rounded-md p-2 mb-2">
+            <span>{{ battingNumber + 1 }}</span>
+            <span>{{ batter.firstName }} {{ batter.lastName }}</span>
+        </div>
+    </div>
+
+    <button type="button"
+        class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition-opacity duration-300 focus:outline-none w-full"
+        (click)="generate()">Generate Order</button>
+</div>
