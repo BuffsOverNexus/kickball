@@ -4,7 +4,7 @@
         <div *ngFor="let player of players"
             class="flex items-center justify-between bg-gray-800 text-white rounded-md p-2 mb-2">
             <label [for]="player.id" class="text-white">{{ player.firstName }} {{ player.lastName }}</label>
-            <input type="checkbox" [(ngModel)]="player.ineligible" class="ml-2" />
+            <input type="checkbox" [id]="player.id" [(ngModel)]="player.ineligible" class="ml-2" />
         </div>
     </div>
 
